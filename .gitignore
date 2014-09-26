@@ -23,4 +23,8 @@ local.properties
 .classpath
 .settings/
 .loadpath
-/build/
+
+# IDEA #
+.idea/
+*.iml
+*.iws
