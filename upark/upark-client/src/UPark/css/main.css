@@ -1,0 +1,77 @@
+body {
+	font-family:Arial, Helvetica, sans-serif;
+}
+div{
+	/*border: 1px solid;	*/
+}
+#top-sticker {
+	height: 40px;
+	width: 100%;
+	position: fixed;
+	z-index: 50;	
+	padding-top:5px;
+	background-color:#000;
+	opacity: 0.7;
+	color: #FFF;
+	font-weight:bold;
+	font-size:20px;
+	text-align: center;
+}
+#header{
+	margin-top: 40px;
+	height: 200px;
+	background-color: #3498db;
+}
+#header #logo{
+	height: 200px;
+	background-color: #f1c40f;
+}
+#header #account{
+	height: 90px;
+	background-color: #e74c3c;
+}
+#header #search{
+	height: 60px;
+	margin-top: 50px;
+}
+#header #search #txt-search{
+	height: 60px;
+	width: 75%;
+	display: inline-block;
+	float: left;
+}
+#header #search #btn-search{
+	height: 60px;
+	width: 25%;
+	display: inline-block;
+	float: left;
+}
+#content{
+	height: 700px;
+	text-align: center;
+}
+#content img{
+	margin-top: 20px;
+	width: 90%;
+	height: 650px;
+}
+#content #extended-page{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	
+	border: 1px solid;
+	height: 700px;
+	background-color: #34495e;
+	opacity: 0.6;
+	display: none;
+}
+#sidebar{
+	height: 700px;
+	background-color: #9b59b6;
+}
+
+#footer{
+	height: 150px;
+	background-color: #bdc3c7;
+}
