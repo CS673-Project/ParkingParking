@@ -1,38 +1,27 @@
 body {
 	font-family:Arial, Helvetica, sans-serif;
 }
-div{
-	/*border: 1px solid;	*/
+.navbar{
+	font-size: 20px;
+	opacity: 0.9;
 }
-#top-sticker {
-	height: 40px;
-	width: 100%;
-	position: fixed;
-	z-index: 50;	
-	padding-top:5px;
-	background-color:#000;
-	opacity: 0.7;
-	color: #FFF;
-	font-weight:bold;
-	font-size:20px;
-	text-align: center;
+.navbar-header span{
+	display: inline-block;
+	font-size: 28px;
+	color: #fff;
+	padding-top: 5px;
 }
 #header{
-	margin-top: 40px;
-	height: 200px;
+	height: 230px;
 	background-color: #3498db;
 }
 #header #logo{
-	height: 200px;
+	height: 230px;
 	background-color: #f1c40f;
-}
-#header #account{
-	height: 90px;
-	background-color: #e74c3c;
 }
 #header #search{
 	height: 60px;
-	margin-top: 50px;
+	margin-top: 160px;
 }
 #header #search #txt-search{
 	height: 60px;
@@ -70,8 +59,52 @@ div{
 	height: 700px;
 	background-color: #9b59b6;
 }
+#sidebar .nav-tabs{
+	border: none;
+}
+#sidebar ul{
+	margin-top: 30px;
+	font-size: 20px;
 
+}
+#sidebar li{
+	margin-top: 15px;
+	width: 100%;
+}
+#sidebar li a{
+	color: #000;
+}
 #footer{
 	height: 150px;
 	background-color: #bdc3c7;
+}
+.modal-dialog{
+	width: 400px;
+}
+#modal-sign-in .modal-content{
+	background-color:  #3498db;
+	opacity: 0.9;
+	font-size: 16px;
+}
+#modal-sign-in .modal-header{
+	border: none;
+}
+#modal-sign-in .modal-body{
+	margin-left: 10px;	
+}
+#modal-sign-in .modal-footer{
+	margin-left: 10px;
+	border: none;
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+#modal-sign-in .modal-footer a{
+	color: #000;	
+}
+#modal-sign-in .modal-footer button{
+	width: 120px;
+}
+#modal-sign-in .modal-footer span{
+	margin-left: 20px;
+	margin-top: 10px;
 }
