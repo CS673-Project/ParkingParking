@@ -44,14 +44,15 @@ body {
 	width: 90%;
 	height: 650px;
 }
-#content #extended-page{
+/*sliding page*/
+#extended-page{
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	
 	border: 1px solid;
 	height: 700px;
 	background-color: #34495e;
+	color: #FFF;
 	opacity: 0.6;
 	display: none;
 }
@@ -107,4 +108,14 @@ body {
 #modal-sign-in .modal-footer span{
 	margin-left: 20px;
 	margin-top: 10px;
+}
+
+/*map style*/
+.angular-google-map-container{
+	height: 650px;
+	width: 100%;
+}
+#map_canvas{
+	text-align: center;
+	margin-top: 25px;
 }
