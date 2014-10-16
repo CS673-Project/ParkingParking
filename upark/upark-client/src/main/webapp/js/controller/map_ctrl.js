@@ -1,5 +1,5 @@
 // angularJS mapCtrl implementation for map in content section
-var mapCtrl = function($scope,$routeParams){
+app.controller('mapCtrl',function($scope,$routeParams){
     // alert($routeParams.id);
     $scope.map = {center: {latitude: 44, longitude: -108 }, zoom: 4 };
     $scope.options = {scrollwheel: false};
@@ -28,5 +28,4 @@ var mapCtrl = function($scope,$routeParams){
         }
     ];
 
-}
-mapCtrl.$inject = ['$scope','$routeParams'];
+});

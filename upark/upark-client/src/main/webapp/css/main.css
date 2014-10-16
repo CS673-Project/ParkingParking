@@ -119,3 +119,10 @@ body {
 	text-align: center;
 	margin-top: 25px;
 }
+/*validation style*/
+input.ng-invalid {
+  border: 2px solid red;
+}
+input.ng-valid {
+  border: 1px solid green;
+}
