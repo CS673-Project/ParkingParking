@@ -2,6 +2,8 @@ package edu.bu.heptagon.upark.dao;
 
 import java.util.UUID;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +14,7 @@ public class UserAccountDAOImpl implements UserAccountDAO{
 	@Autowired
     private SessionFactory sessionFactory;
     
-	String queryHQL ＝ "from useraccount where useraccount.username =:inputUsername";
+	String queryHQL = "from useraccount where useraccount.username =:inputUsername";
     private Session getCurrentSession() {
         return sessionFactory.getCurrentSession();
     }
