@@ -1,0 +1,147 @@
+body {
+	font-family:Arial, Helvetica, sans-serif;
+}
+.navbar{
+	font-size: 20px;
+	opacity: 0.9;
+}
+.navbar-header span{
+	display: inline-block;
+	font-size: 28px;
+	color: #fff;
+	padding-top: 5px;
+}
+#header{
+	height: 230px;
+	background-color: #3498db;
+}
+#header #logo{
+	height: 230px;
+	background-color: #f1c40f;
+}
+#header #search{
+	height: 60px;
+	margin-top: 160px;
+}
+#header #search #txt-search{
+	height: 60px;
+	width: 75%;
+	display: inline-block;
+	float: left;
+}
+#header #search #btn-search{
+	height: 60px;
+	width: 25%;
+	display: inline-block;
+	float: left;
+}
+#content{
+	height: 700px;
+	text-align: center;
+}
+#content img{
+	margin-top: 20px;
+	width: 90%;
+	height: 650px;
+}
+/*sliding page*/
+#extended-page{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	border: 1px solid;
+	height: 700px;
+	background-color: #34495e;
+	color: #FFF;
+	opacity: 0.6;
+	display: none;
+}
+#sidebar{
+	height: 700px;
+	background-color: #9b59b6;
+}
+#sidebar .nav-tabs{
+	border: none;
+}
+#sidebar ul{
+	margin-top: 30px;
+	font-size: 20px;
+
+}
+#sidebar li{
+	margin-top: 15px;
+	width: 100%;
+}
+#sidebar li a{
+	color: #000;
+}
+#footer{
+	height: 150px;
+	background-color: #bdc3c7;
+}
+.modal-dialog{
+	width: 400px;
+}
+#modal-sign-in .modal-content{
+	background-color:  #3498db;
+	opacity: 0.9;
+	font-size: 16px;
+}
+#modal-sign-in .modal-header{
+	border: none;
+}
+#modal-sign-in .modal-body{
+	margin-left: 10px;	
+}
+#modal-sign-in .modal-footer{
+	margin-left: 10px;
+	border: none;
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+#modal-sign-in .modal-footer a{
+	color: #000;	
+}
+#modal-sign-in .modal-footer button{
+	width: 120px;
+}
+#modal-sign-in .modal-footer span{
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+/*map style*/
+.angular-google-map-container{
+	height: 650px;
+	width: 100%;
+}
+#map_canvas{
+	text-align: center;
+	margin-top: 25px;
+}
+
+#map {
+    height:630px;
+    width:900px;
+}
+.infoWindowContent {
+    font-size:  14px !important;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+/*
+.angular-google-map-container {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+}
+*/
+/*validation style*/
+input.ng-invalid {
+  border: 2px solid red;
+}
+input.ng-valid {
+  border: 1px solid green;
+}
