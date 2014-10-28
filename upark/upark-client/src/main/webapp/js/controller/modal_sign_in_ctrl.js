@@ -1,6 +1,7 @@
-app.controller('modalSignInCtrl',function($scope,$resource,$location,$rootScope,Greeting){
+app.controller('modalSignInCtrl',function($scope,$resource,$location,Greeting){
 
-     var User = $resource(
+    $scope.invalid_account = '';
+    var User = $resource(
                     'php/test2.php/username/:username/password/:password',
                     {
                         username:'',
@@ -10,7 +11,7 @@ app.controller('modalSignInCtrl',function($scope,$resource,$location,$rootScope,
                         'save': {method:'POST'}
                     }
                 );
-     $scope.logIn = function(){
+    $scope.logIn = function(){
 
         var user = User.save(
                         {
@@ -23,19 +24,18 @@ app.controller('modalSignInCtrl',function($scope,$resource,$location,$rootScope,
                                    // $scope.$parent.account.text = user.username;
                                    Greeting.greet.text = user.username;
                                    Greeting.greet.isLogIn = true; 
+                                   $('#modal-sign-in').modal('hide');
                                 }
-                                else
-                                    alert(2);
+                                else{
+                                    $scope.invalid_account = "Incorrect username or password";
+                                }
                             }
                         );
-    //  $http.get('data/account.json').success(function(data) {
-            
-    //  $scope.user = data;
-    //  if($scope.account.input_username == $scope.user.username ){
-    //          $scope.account.text = $scope.user.username ;
-    //          account_status = true;      
-    //      }
-       // });
-     
+
+    }
+
+    $scope.register = function(){   
+        $("#modal-sign-in").modal('hide');
+        $("#modal-register").modal().css({'margin-top': function(){return ($(this).height()/2-120);}});
     }
 });

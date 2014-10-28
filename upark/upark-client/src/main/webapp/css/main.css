@@ -14,10 +14,19 @@ body {
 #header{
 	height: 230px;
 	background-color: #3498db;
+	/*background-image: url('stars.gif');*/
+ 	background-repeat: repeat-y;
 }
 #header #logo{
 	height: 230px;
 	background-color: #f1c40f;
+	text-align: center;
+	vertical-align: middle;
+}
+#header #logo img{
+	margin-top: 40px;
+	
+	width: 80%;
 }
 #header #search{
 	height: 60px;
@@ -32,6 +41,7 @@ body {
 #header #search #btn-search{
 	height: 60px;
 	width: 25%;
+	font-size: 20px;
 	display: inline-block;
 	float: left;
 }
@@ -79,6 +89,7 @@ body {
 	height: 150px;
 	background-color: #bdc3c7;
 }
+/*sign in modal dialog css style*/
 .modal-dialog{
 	width: 400px;
 }
@@ -109,7 +120,44 @@ body {
 	margin-left: 20px;
 	margin-top: 10px;
 }
+#modal-sign-in .error-message{
+	padding-left: 15%;
+}
 
+/*register modal dialog css style*/
+#modal-register .modal-dialog{
+	width: 500px;
+}
+#modal-register .modal-content{
+	background-color:  #3498db;
+	opacity: 0.9;
+	font-size: 16px;
+}
+#modal-register .modal-header{
+	border: none;
+}
+#modal-register .modal-body{
+	margin-left: 10px;	
+}
+#modal-register .modal-footer{
+	margin-left: 10px;
+	border: none;
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+#modal-register .modal-footer a{
+	color: #000;	
+}
+#modal-register .modal-footer button{
+	width: 120px;
+}
+#modal-register .modal-footer span{
+	margin-left: 20px;
+	margin-top: 10px;
+}
+#modal-register label{
+	text-align: left;
+}
 /*map style*/
 .angular-google-map-container{
 	height: 650px;
@@ -121,8 +169,32 @@ body {
 }
 /*validation style*/
 input.ng-invalid {
-  border: 2px solid red;
+  border: 1px solid red;
 }
 input.ng-valid {
   border: 1px solid green;
 }
+
+/*account_detail page css style*/
+#account_view{
+	margin-left: 25%;
+	margin-bottom: 40px;
+	margin-top: 30px;
+	font-size: 20px;
+	width: 50%;	
+}
+#account_view span{
+	display: inline-block;
+	width: 30%;
+	vertical-align: top;
+}
+#account_view span.rightspan{
+	display: inline-block;
+	width: 70%;
+	vertical-align: top;
+}
+#account_view p{
+	margin-left: 10%;
+
+}
+
