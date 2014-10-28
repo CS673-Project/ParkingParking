@@ -1,0 +1,91 @@
+<!DOCTYPE>
+<html ng-app="phonecat">
+<head>
+	<meta charset="UTF-8">
+	<title>angular-google-maps example</title>
+	<style>
+	.angular-google-map-container{
+			
+			border: 1px solid;
+			height: 400px;
+		}
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.5/angular.min.js"></script>
+	<script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>
+		
+	<script src="angular-route.js"></script>
+	
+	<script src='lodash.underscore.min.js'></script>
+	<script src="angular-google-maps.js"></script>
+
+
+	
+</head>
+<body  >
+	<script type="text/javascript">
+	var app = angular.module('phonecat', ['ngRoute','google-maps']).config(['$routeProvider', function($routeProvider) {
+  $routeProvider.
+  		when('/', {templateUrl: 'phone-list.html',   controller: PhoneListCtrl}).
+      when('/phones', {templateUrl: 'phone-list.html',   controller: PhoneListCtrl}).
+      when('/phones/:phoneId', {templateUrl: 'content.html', controller: mapCtrl}).
+      otherwise({redirectTo: '/'});
+}]);
+
+function PhoneListCtrl($scope, $http) {
+ $scope.phones = [
+    {"id":"motorola-defy-with-motoblur",
+     "name": "Nexus S",
+     "snippet": "Fast just got faster with Nexus S."},
+    {"id":"motorola-defy-with-motoblur2",
+    	"name": "Motorola XOOM™ with Wi-Fi",
+     "snippet": "The Next, Next Generation tablet."},
+    {"id":"motorola-defy-with-motoblur3",
+    	"name": "MOTOROLA XOOM™",
+     "snippet": "The Next, Next Generation tablet."}
+  ];
+
+  $scope.orderProp = 'age';
+}
+
+  function PhoneDetailCtrl($scope, $routeParams) {
+  $scope.phoneId = $routeParams.phoneId;
+}
+
+
+var mapCtrl = function($scope){
+    $scope.map = {center: {latitude: 44, longitude: -108 }, zoom: 4 };
+    $scope.options = {scrollwheel: false};
+    $scope.circles = [
+        {
+            id: 1,
+            center: {
+                latitude: 44,
+                longitude: -108
+            },
+            radius: 500000,
+            stroke: {
+                color: '#08B21F',
+                weight: 2,
+                opacity: 1
+            },
+            fill: {
+                color: '#08B21F',
+                opacity: 0.5
+            },
+            geodesic: true, // optional: defaults to false
+            draggable: true, // optional: defaults to false
+            clickable: true, // optional: defaults to true
+            editable: true, // optional: defaults to false
+            visible: true // optional: defaults to true
+        }
+    ];
+
+}
+mapCtrl.$inject = ['$scope'];
+</script>
+ <div ng-view></div>
+
+	 
+</body>
+</html>
