@@ -1,6 +1,6 @@
 function accountDetailCtrl($scope, $resource,$location, $routeParams) {
 	$scope.user = {username: ''};
-    $scope.user.username = $routeParams.username;
+    
 
     var User = $resource(
                     'php/test3.php/username/:username/',
@@ -21,7 +21,7 @@ function accountDetailCtrl($scope, $resource,$location, $routeParams) {
     					
     				}
     				else
-    					alert('ok');
+    					$scope.user.username = user.username;
 				}
 			);
 

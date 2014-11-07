@@ -8,6 +8,7 @@
     <ul class="nav navbar-nav navbar-right ">
       <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span><span> Home</span></a></li>
       <li><a href="" ng-click="signIn()" ><span class="glyphicon glyphicon-user"></span><span>{{greeting.text}}</span></a></li>
+      <li ng-hide="!greeting.isLogIn"><a href=""  ><span class="glyphicon glyphicon-user"></span><span>Log Out</span></a></li>
       <li><a href="#"><span class="glyphicon glyphicon-headphones"></span><span>Support</span></a></li>
     </ul>
     </div>
