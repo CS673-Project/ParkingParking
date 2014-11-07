@@ -48,6 +48,9 @@ app.controller('MapCtrl', function ($scope) {
     
     var infoWindow = new google.maps.InfoWindow();
     
+    var input = document.getElementById('address');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+
     var createMarker = function (info){
         
         var marker = new google.maps.Marker({
@@ -69,6 +72,8 @@ app.controller('MapCtrl', function ($scope) {
     for (i = 0; i < cities.length; i++){
         createMarker(cities[i]);
     }
+
+
 
     $scope.openInfoWindow = function(e, selectedMarker){
         e.preventDefault();
@@ -93,5 +98,6 @@ app.controller('MapCtrl', function ($scope) {
   });
         
 }
+
 
 });
