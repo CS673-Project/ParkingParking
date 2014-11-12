@@ -30,9 +30,8 @@ public class UserAccountDAOImpl implements UserAccountDAO{
  
     }
     public UserAccount findUserbyName(String username){
-    	return getCurrentSession().createQuery(queryHQL).setString("inputUsername",username);
-   
-    	
+    	return (UserAccount) getCurrentSession().createQuery(queryHQL).setString("inputUsername",username);
+
     }
  
     public UserAccount getUserAccount(UUID id) {

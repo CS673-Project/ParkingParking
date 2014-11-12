@@ -1,0 +1,13 @@
+<!-- website main content section -->
+<div ng-app="UPark" ng-controller="MapCtrl">
+	<div id="search" class="col-md-12">
+		<div class="form-group">
+			<input id="address" type="text" class="form-control" placeholder="Enter your destination">
+			<button  id="btn-search" type="button" class="btn btn-success" ng-click="codeAddress()">Search</button>
+		</div>
+	</div>
+    <div id="map"></div>
+    <div id="class" ng-repeat="marker in markers | orderBy : 'title'">
+         <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+    </div>
+</div>
