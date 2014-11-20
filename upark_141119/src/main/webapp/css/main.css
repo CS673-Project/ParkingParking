@@ -1,0 +1,207 @@
+body {
+	font-family:Arial, Helvetica, sans-serif;
+}
+.navbar{
+	font-size: 20px;
+	opacity: 0.9;
+}
+.navbar-header span{
+	display: inline-block;
+	font-size: 28px;
+	color: #fff;
+	padding-top: 5px;
+}
+#header{
+	height: 230px;
+	background-color: #3498db;
+	/*background-image: url('stars.gif');*/
+ 	background-repeat: repeat-y;
+}
+#header #logo{
+	height: 230px;
+	background-color: #f1c40f;
+	text-align: center;
+	vertical-align: middle;
+}
+#header #logo img{
+	margin-top: 40px;
+	
+	width: 80%;
+}
+#header #search{
+	height: 60px;
+	margin-top: 160px;
+}
+#header #search #txt-search{
+	height: 60px;
+	width: 75%;
+	display: inline-block;
+	float: left;
+}
+#header #search #btn-search{
+	height: 60px;
+	width: 25%;
+	font-size: 20px;
+	display: inline-block;
+	float: left;
+}
+/*sliding page*/
+#extended-page{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	border: 1px solid;
+	height: 700px;
+	background-color: #34495e;
+	color: #FFF;
+	opacity: 0.6;
+	display: none;
+}
+#sidebar{
+	width: 20%;
+	float: left;
+	height: 700px;
+	background-color: #9b59b6;
+}
+#sidebar .nav-tabs{
+	border: none;
+}
+#sidebar ul{
+	margin-top: 30px;
+	font-size: 20px;
+
+}
+#sidebar li{
+	margin-top: 15px;
+	width: 100%;
+}
+#sidebar li a{
+	color: #000;
+}
+#content{
+	float: left;
+	width: 78%;
+}
+
+#footer{
+	clear: both;
+	height: 150px;
+	background-color: #bdc3c7;
+}
+/*sign in modal dialog css style*/
+.modal-dialog{
+	width: 400px;
+}
+#modal-sign-in .modal-content{
+	background-color:  #3498db;
+	opacity: 0.9;
+	font-size: 16px;
+}
+#modal-sign-in .modal-header{
+	border: none;
+}
+#modal-sign-in .modal-body{
+	margin-left: 10px;	
+}
+#modal-sign-in .modal-footer{
+	margin-left: 10px;
+	border: none;
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+#modal-sign-in .modal-footer a{
+	color: #000;	
+}
+#modal-sign-in .modal-footer button{
+	width: 120px;
+}
+#modal-sign-in .modal-footer span{
+	margin-left: 20px;
+	margin-top: 10px;
+}
+#modal-sign-in .error-message{
+	padding-left: 15%;
+}
+
+/*register modal dialog css style*/
+#modal-register .modal-dialog{
+	width: 500px;
+}
+#modal-register .modal-content{
+	background-color:  #3498db;
+	opacity: 0.9;
+	font-size: 16px;
+}
+#modal-register .modal-header{
+	border: none;
+}
+#modal-register .modal-body{
+	margin-left: 10px;	
+}
+#modal-register .modal-footer{
+	margin-left: 10px;
+	border: none;
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+#modal-register .modal-footer a{
+	color: #000;	
+}
+#modal-register .modal-footer button{
+	width: 120px;
+}
+#modal-register .modal-footer span{
+	margin-left: 20px;
+	margin-top: 10px;
+}
+#modal-register label{
+	text-align: left;
+}
+/*map style*/
+.angular-google-map-container{
+	height: 650px;
+	width: 100%;
+}
+#map_canvas{
+	text-align: center;
+	margin-top: 25px;
+}
+/*validation style*/
+input.ng-invalid {
+  border: 1px solid red;
+}
+input.ng-valid {
+  border: 1px solid green;
+}
+
+/*account_detail page css style*/
+#account_detail{
+	font-size: 25px;
+}
+#account_detail dt{
+	text-align: left;
+}
+#account_detail #account_info{
+	margin-left: 20%;
+	margin-right: 20%;
+}
+#map_canvas{
+	text-align: center;
+	margin-top: 25px;
+}
+
+#map {
+    height:630px;
+    width:900px;
+}
+.infoWindowContent {
+    font-size:  14px !important;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+/*map info window style*/
+.infoWindow{
+	width: 300px;
+	height: 200px;
+}
