@@ -28,14 +28,13 @@ public class RegisterController {
 		System.out.println(user.getFirstname());
 		System.out.println(user.getLastname());
 		
-	
-		RegisterService.doRegister(req, user);
-		
-		
 		UserAccount uc = new UserAccount();
-		
-		uc.setUsername(user.getUsername());
-		
+		uc.setUsername("");
+		if(RegisterService.doRegister(req, user))
+		{
+			uc.setUsername(user.getUsername());
+		}
+	
 		return uc;
 	}
 	
