@@ -35,7 +35,7 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost/hibernate</property>
+        <property name="connection.url">jdbc:mysql://localhost/upark</property>
         <property name="connection.username">root</property>
         <property name="connection.password">TXtx132428</property>
 
@@ -55,12 +55,13 @@
 
         <!-- Drop and re-create the database schema on startup -->
         
-        
+       
         <property name="hbm2ddl.auto">update</property>
 		
         <!-- Names the annotated entity class -->
          
         <mapping class="bu.edu.upark.entities.UserAccount"/>
+        <mapping class = "bu.edu.upark.entities.ParkingInfo"/>
 		
     </session-factory>
 
