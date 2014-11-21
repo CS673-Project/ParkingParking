@@ -18,7 +18,7 @@ public class RegisterServiceImpl implements RegisterService{
 	public boolean doRegister(HttpServletRequest req, UserAccount useraccount) {
 		UserAccount ua = uad.findUserbyName(useraccount.getUsername());
 		if(ua==null){
-			uad.addUserAccount(ua);
+			uad.addUserAccount(useraccount);
 			System.out.println("Register Success");
 			return true;
 		}
