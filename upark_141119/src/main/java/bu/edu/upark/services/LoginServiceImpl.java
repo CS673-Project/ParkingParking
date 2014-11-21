@@ -5,14 +5,9 @@ import org.springframework.context.annotation.ComponentScan;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.ModelAndView;
-
 import bu.edu.upark.repositories.UserAccountDAO;
 import bu.edu.upark.entities.UserAccount;
-
-import org.springframework.web.servlet.ModelAndView;
 
 @Service
 @ComponentScan("bu.edu.upark.repositories")
