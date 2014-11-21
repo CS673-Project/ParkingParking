@@ -1,14 +1,23 @@
 package bu.edu.upark.selenium;
 
+import java.util.List;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
+
 import org.junit.*;
+
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
+/**
+ * Test case to test user login function.
+ * @author Feiyu Shi
+ * @since Nov. 21, 2014
+ */
 public class UserLogin {
   private WebDriver driver;
   private String baseUrl;
@@ -19,7 +28,7 @@ public class UserLogin {
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
     baseUrl = "http://localhost:8080/";
-    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
   }
 
   @Test
@@ -31,27 +40,36 @@ public class UserLogin {
     driver.findElement(By.name("password")).clear();
     driver.findElement(By.name("password")).sendKeys("admin");
     driver.findElement(By.xpath("//button[@type='submit']")).click();
-    driver.findElement(By.xpath("//li[3]/a/span[2]")).click();
+    List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),'" + "Incorrect username or password" + "')]"));
+	assertFalse(list.size() > 0);
   }
   
   @Test
-  public void testUserLoginIllegalUserName1() throws Exception {
+  public void testUserLoginWrongPassword() throws Exception {
 	  driver.get(baseUrl + "/upark/#/");
 	  driver.findElement(By.cssSelector("span.ng-binding")).click();
 	  driver.findElement(By.name("username")).clear();
-	  driver.findElement(By.name("username")).sendKeys("fshi");
-	  // get return value from javascript
-	  
+	  driver.findElement(By.name("username")).sendKeys("fshi@bu.edu");
+	  driver.findElement(By.name("password")).clear();
+	  driver.findElement(By.name("password")).sendKeys("ad");
+	  driver.findElement(By.xpath("//button[@type='submit']")).click();
+	  // check if "Incorrect username or password" is displayed
+	  List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),'" + "Incorrect username or password" + "')]"));
+	  assertTrue(list.size() > 0);
   }
 
   @Test
-  public void testUserLoginIllegalUserName2() throws Exception {
+  public void testUserLoginWrongUserName() throws Exception {
 	  driver.get(baseUrl + "/upark/#/");
 	  driver.findElement(By.cssSelector("span.ng-binding")).click();
 	  driver.findElement(By.name("username")).clear();
-	  driver.findElement(By.name("username")).sendKeys("fshi@bu");
-	  
+	  driver.findElement(By.name("username")).sendKeys("fshi2@bu.edu");
+	  driver.findElement(By.name("password")).clear();
+	  driver.findElement(By.name("password")).sendKeys("admin");
+	  driver.findElement(By.xpath("//button[@type='submit']")).click();
 
+	  List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),'" + "Incorrect username or password" + "')]"));
+	  assertTrue(list.size() > 0);
   }
   
   @After
