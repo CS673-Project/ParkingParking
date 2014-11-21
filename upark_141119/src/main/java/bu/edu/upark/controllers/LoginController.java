@@ -49,13 +49,10 @@ public class LoginController {
 	public @ResponseBody UserAccount saveUserRestful( HttpServletRequest req , @RequestBody UserAccount user )   
 	{		
 		UserAccount uc = new UserAccount();
-		
+
 		uc.setUsername("");
-		
 		if (loginService.doLogin(req, user.getUsername(), user.getPassword()))
 		{
-			HttpSession session = req.getSession();
-			session.setAttribute("username" , user.getUsername());
 			uc.setUsername(user.getUsername());
 		}
 		
