@@ -22,6 +22,8 @@ public class SessionController {
 		HttpSession session = req.getSession();
 		
 		uc.setUsername((String)session.getAttribute("username"));
+		uc.setFirstname((String) session.getAttribute("firstname")); 
+		uc.setLastname((String) session.getAttribute("lastname")); 
 		
 		if (uc.getUsername() == null)
 		{
@@ -30,7 +32,7 @@ public class SessionController {
 
 
 		System.out.println(uc.getUsername());
-
+		System.out.println(uc.getFirstname());
 	    return uc;
 	}
 	

@@ -50,7 +50,7 @@ public class LoginController {
 	{		
 		UserAccount uc = new UserAccount();
 		uc.setUsername("");
-		if (loginService.doLogin(req, user.getUsername(), user.getPassword()))
+		if (loginService.doLogin(req, user))
 		{
 			uc.setUsername(user.getUsername());
 		}
