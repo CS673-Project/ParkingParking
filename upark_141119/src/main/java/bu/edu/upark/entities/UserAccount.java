@@ -11,11 +11,6 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 
-
-
-
-
-
 @Entity(name="UserAccount")
 @Table(name="UserAccount")
 public class UserAccount {
