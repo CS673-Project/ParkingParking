@@ -6,21 +6,21 @@
 				<dt>Renter Name</dt>
 				<dd>{{username}}</dd>
 				<dt>Email</dt>
-				<dd></dd>
+				<dd>{{email}}</dd>
 				<dt>Area</dt>
-				<dd><select></select></dd>
+				<dd><select ng-model ="area"></select></dd>
 				<dt>Zipcode</dt>
-				<dd><input type="text"></dd>
+				<dd><input type="text" ng-model ="zipcode"></dd>
 				<dt>Address Line1</dt>
-				<dd><input type="text"><span>(Street, City, State)</span></dd>
+				<dd><input type="text" ng-model ="address1"><span>(Street, City, State)</span></dd>
 				<dt>Address Line2</dt>
-				<dd><input type="text"><span>(APT, Number)</span></dd>
+				<dd><input type="text" ng-model ="address2"><span>(APT, Number)</span></dd>
 				<dt>Rent Date</dt>
-				<dd><input type="date"></dd>
+				<dd><input type="date" ng-model ="date"></dd>
 				<dt>From</dt>
-				<dd><input type="time">to<input type="time"></dd>
+				<dd><input type="time" ng-model ="startTime">to<input type="endTime"></dd>
 			</dl>
-			<button>Submit</button>
+			<button ng-click="postInfo()">Submit</button>
 		</fieldset>
 	</div>
 </div>

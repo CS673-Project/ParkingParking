@@ -5,4 +5,33 @@ function postInfoCtrl($scope,$resource,$location,Greeting){
 	else
 		$scope.username = Greeting.greet.text;
 	
+	$scope.postInfo = function(){
+		var postInfo = $resource(
+				'/upark/post' 
+				);
+		
+		var info = postInfo.save(
+    			{
+    				area: $scope.area,
+    				zipcode: $scope.zipcode,
+    				address1: $scope.address1,
+    				address2: $scope.address2,
+    				date: $scope.date,
+    				startTime: $scope.startTime,
+    				endTime: $scope.endTime
+    			},
+    			function(){
+    				
+    				if(1){
+
+    					$location.path("/");
+    					
+    				}
+    				else{
+    					
+                    }
+				}
+		);
+	}
+	
 }
