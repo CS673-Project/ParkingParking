@@ -1,4 +1,4 @@
-function postInfoCtrl($scope,$resource,$location,Greeting){
+app.controller( 'postInfoCtrl',function($scope,$resource,$location,Greeting){
 	if(Greeting.greet.isLogIn == false){
 		$location.path("/");
 	}
@@ -9,6 +9,8 @@ function postInfoCtrl($scope,$resource,$location,Greeting){
 	
 	
 	$scope.postInfo = function(){
+		alert($scope.zipcode);
+		alert($scope.address1);
 		var postInfo = $resource(
 				'/upark/post' 
 				);
@@ -38,4 +40,4 @@ function postInfoCtrl($scope,$resource,$location,Greeting){
 		);
 	}
 	
-}
+})

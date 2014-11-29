@@ -1,7 +1,8 @@
-<div>
+<div ng-controller="postInfoCtrl">
 	<div id = "post_info">
-  		<fieldset class="test">
-	    	<legend class="test"><h2>Post my parking slot</h2></legend>
+	<form  novalidate>
+  		<fieldset>
+	    	<legend><h2>Post my parking slot</h2></legend>
 			<dl class="dl-horizontal">
 				<dt>Renter Name</dt>
 				<dd>{{username}}</dd>
@@ -10,7 +11,7 @@
 				<dt>Area</dt>
 				<dd><select ng-model ="area"></select></dd>
 				<dt>Zipcode</dt>
-				<dd><input type="text" ng-model ="zipcode"></dd>
+				<dd><input ng-model = "zipcode"  type="text" required></dd>
 				<dt>Address Line1</dt>
 				<dd><input type="text" ng-model ="address1"><span>(Street, City, State)</span></dd>
 				<dt>Address Line2</dt>
@@ -24,5 +25,6 @@
 			</dl>
 			<button ng-click="postInfo()">Submit</button>
 		</fieldset>
+		</form>
 	</div>
 </div>
