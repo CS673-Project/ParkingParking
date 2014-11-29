@@ -25,13 +25,6 @@ public class PostServiceImpl implements PostService{
 			pid.addParkInfo(parkInfo);
 			System.out.println("Post Success");
 			
-			List<ParkingInfo> list;
-			
-			list = pid.findAll();
-			
-			ParkingInfo testP = list.get(0);
-			
-			
 			
 			return true;
 		}
