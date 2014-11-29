@@ -9,7 +9,13 @@
 				<dt>Email</dt>
 				<dd>{{email}}</dd>
 				<dt>Area</dt>
-				<dd><select ng-model ="area"></select></dd>
+				<dd>
+					<select ng-model ="area">
+						<option value ="Boston">Boston</option>
+						<option value ="Cambridge">Cambridge</option>
+						<option value="Brookline">Brookline</option>
+					</select>
+				</dd>
 				<dt>Zipcode</dt>
 				<dd><input ng-model = "zipcode"  type="text" required></dd>
 				<dt>Address Line1</dt>
