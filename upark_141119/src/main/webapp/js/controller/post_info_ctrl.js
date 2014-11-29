@@ -9,8 +9,8 @@ app.controller( 'postInfoCtrl',function($scope,$resource,$location,Greeting){
 	
 	
 	$scope.postInfo = function(){
-		alert($scope.zipcode);
-		alert($scope.address1);
+		alert($scope.startTime);
+		alert($scope.date);
 		var postInfo = $resource(
 				'/upark/post' 
 				);
@@ -24,7 +24,7 @@ app.controller( 'postInfoCtrl',function($scope,$resource,$location,Greeting){
     				date: $scope.date,
     				startTime: $scope.startTime,
     				endTime: $scope.endTime,
-    				unitPirce: $scope.price
+    				unitPrice: $scope.unitPrice
     			},
     			function(){
     				
