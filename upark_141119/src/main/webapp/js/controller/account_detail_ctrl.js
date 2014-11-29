@@ -1,4 +1,9 @@
-function accountDetailCtrl($scope, $resource,$location, $routeParams) {
+function accountDetailCtrl($scope, $resource,$location, $routeParams, Greeting) {
+	
+	if(Greeting.greet.isLogIn == false){
+		$location.path("/");
+	}
+	
 	$scope.user = {username: ''};
     
 

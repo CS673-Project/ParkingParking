@@ -15,7 +15,8 @@ app.controller('modalRegisterCtrl',function($scope,$resource,$location,Greeting)
                             {
                                 if(user.username != "" ){
                                    // $scope.$parent.account.text = user.username;
-                                   Greeting.greet.text = user.username;
+                                   Greeting.greet.email = user.username;
+                                   Greeting.greet.text = user.firstname + " " + user.lastname;
                                    Greeting.greet.isLogIn = true; 
                                    $('#modal-register').modal('hide');
                                 }

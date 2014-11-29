@@ -30,9 +30,6 @@ public class SessionController {
 			uc.setUsername("");
 		}
 
-
-		System.out.println(uc.getUsername());
-		System.out.println(uc.getFirstname());
 	    return uc;
 	}
 	

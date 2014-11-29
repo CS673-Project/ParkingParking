@@ -14,6 +14,7 @@ app.factory("Greeting", function() {
   	return {
   			greet: {
   				text:'Sign In',
+  				email:"",
   				isLogIn: false
   			}
   		};
