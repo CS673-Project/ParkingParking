@@ -18,7 +18,9 @@
 				<dt>Rent Date</dt>
 				<dd><input type="date" ng-model ="date"></dd>
 				<dt>From</dt>
-				<dd><input type="time" ng-model ="startTime">to<input type="endTime"></dd>
+				<dd><input type="time" ng-model ="startTime">to<input type="time" ng-model="endTime"></dd>
+				<dt>Pirce(per Hour)</dt>
+				<dd><input type="number" ng-model ="unitPrice"><span>$</span></span></dd>
 			</dl>
 			<button ng-click="postInfo()">Submit</button>
 		</fieldset>

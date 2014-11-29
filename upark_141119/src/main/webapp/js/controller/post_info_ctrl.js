@@ -2,8 +2,11 @@ function postInfoCtrl($scope,$resource,$location,Greeting){
 	if(Greeting.greet.isLogIn == false){
 		$location.path("/");
 	}
-	else
+	else{
 		$scope.username = Greeting.greet.text;
+		$scope.email = Greeting.greet.email;
+	}
+	
 	
 	$scope.postInfo = function(){
 		var postInfo = $resource(
@@ -18,7 +21,8 @@ function postInfoCtrl($scope,$resource,$location,Greeting){
     				address2: $scope.address2,
     				date: $scope.date,
     				startTime: $scope.startTime,
-    				endTime: $scope.endTime
+    				endTime: $scope.endTime,
+    				unitPirce: $scope.price
     			},
     			function(){
     				
