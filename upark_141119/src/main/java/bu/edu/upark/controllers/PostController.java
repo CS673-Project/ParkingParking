@@ -2,10 +2,7 @@ package bu.edu.upark.controllers;
 
 
 
-import java.awt.PageAttributes.MediaType;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.List;
 
 import bu.edu.upark.entities.*;
 
@@ -43,20 +40,27 @@ import bu.edu.upark.services.LoginServiceImpl;
 public class PostController {
 
 	
-	//@Autowired 
-	PostService postService;
-
+	@Autowired PostServiceImpl postService;
 	@RequestMapping(value = "/post", method = RequestMethod.POST)
 	public @ResponseBody ParkingInfo saveUserRestful( HttpServletRequest req , @RequestBody ParkingInfo parkInfo )   
 	{		
+		HttpSession session = req.getSession();
+		parkInfo.setUsername((String)session.getAttribute("username"));
+		
+		printInfo(parkInfo);
+		
+		
+		
+		
 		
 		if(postService.doPost(req, parkInfo))
 		{
+			
 			return parkInfo;
 		}
 		else
 		{
-		
+			
 			return null;
 		}
 
@@ -67,13 +71,14 @@ public class PostController {
 		System.out.println(pi.getInfoId());
 		System.out.println(pi.getUsername());
 		System.out.println(pi.getZipcode());
-		System.out.println(pi.getCity());
-		System.out.println(pi.getAddress());
-		System.out.println(pi.getFromTime());
+		System.out.println(pi.getArea());
+		System.out.println(pi.getAddress1());
+		System.out.println(pi.getStartTime());
 		System.out.println(pi.getEndTime());
-		System.out.println(pi.getRentDate());
+		System.out.println(pi.getDate());
 		System.out.println(pi.getLattitude());
 		System.out.println(pi.getLongitude());
+		System.out.println(pi.getUnitPrice());
 		
 	}
 

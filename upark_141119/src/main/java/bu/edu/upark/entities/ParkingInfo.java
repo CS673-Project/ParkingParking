@@ -13,18 +13,29 @@ public class ParkingInfo {
 	
 	private int infoId;
 	
+	
 	private String username;// email
 	
-	private String zipcode;
-	private String city;
-	private String address;
+
 	
-	private String rentDate;
-	private String fromTime;
+	private String zipcode;
+	
+	private String area;
+	
+	private String address1;
+
+	private String address2;
+	
+	private String date;
+	private String startTime;
 	private String endTime;
+	
+	private float unitPrice;
 	
 	private double lattitude;
 	private double longitude;
+	
+	
 	
 	@Id
 	@GenericGenerator(name = "idGenerator", strategy = "increment")
@@ -35,48 +46,75 @@ public class ParkingInfo {
 	public void setInfoId(int infoId) {
 		this.infoId = infoId;
 	}
+	
+	
 	public String getUsername() {
 		return username;
 	}
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	
+	public String getArea() {
+		return area;
+	}
+	public void setArea(String area) {
+		this.area = area;
+	}
+	
+	
+	
+	
 	public String getZipcode() {
 		return zipcode;
 	}
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-	public String getCity() {
-		return city;
+	
+	public String getAddress1() {
+		return address1;
 	}
-	public void setCity(String city) {
-		this.city = city;
+	public void setAddress1(String address1) {
+		this.address1 = address1;
 	}
-	public String getAddress() {
-		return address;
+	public String getAddress2() {
+		return address2;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setAddress2(String address2) {
+		this.address2 = address2;
 	}
-	public String getFromTime() {
-		return fromTime;
+	
+	public String getDate() {
+		return date;
 	}
-	public void setFromTime(String fromTime) {
-		this.fromTime = fromTime;
+	public void setDate(String date) {
+		this.date = date;
 	}
+	
+	public String getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+	
+	
 	public String getEndTime() {
 		return endTime;
 	}
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 	}
-	public String getRentDate() {
-		return rentDate;
+	
+	public float getUnitPrice() {
+		return unitPrice;
 	}
-	public void setRentDate(String rentDate) {
-		this.rentDate = rentDate;
+	public void setUnitPrice(float unitPrice) {
+		this.unitPrice = unitPrice;
 	}
+
+	
 	public double getLattitude() {
 		return lattitude;
 	}
@@ -89,6 +127,9 @@ public class ParkingInfo {
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
+	
+	
+	
 	
 	
 	

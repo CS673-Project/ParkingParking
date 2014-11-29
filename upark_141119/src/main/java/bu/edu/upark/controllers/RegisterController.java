@@ -33,6 +33,8 @@ public class RegisterController {
 		if(RegisterService.doRegister(req, user))
 		{
 			uc.setUsername(user.getUsername());
+			uc.setFirstname(user.getFirstname());
+			uc.setLastname(user.getLastname());
 		}
 	
 		return uc;
