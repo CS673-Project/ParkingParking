@@ -34,7 +34,9 @@ var cities = [
 
 //Angular App Module and Controller
 
-app.controller('MapCtrl', function ($scope , $resource) {
+
+app.controller('MapCtrl', function ($scope,$resource) {
+
 
     var mapOptions = {
         zoom: 4,
@@ -84,7 +86,7 @@ app.controller('MapCtrl', function ($scope , $resource) {
     				address:addr
     			},
     			function(){
-    				
+    				alert(markers);
 				}
         );
         
