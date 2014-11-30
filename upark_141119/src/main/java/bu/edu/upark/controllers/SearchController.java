@@ -49,7 +49,7 @@ public class SearchController {
 	double lng2;
 	double[] NorthEast = new double[2];
     double[] SouthWest = new double[2];
-	@RequestMapping(value = "/post", method = RequestMethod.POST)
+	@RequestMapping(value = "/search", method = RequestMethod.POST)
 	public @ResponseBody List<ParkingInfo> saveUserRestful( HttpServletRequest req , @RequestBody UserInput userInput)    
 	{		
 		ParkingInfo pi = new ParkingInfo();

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import bu.edu.upark.services.*;
+import net.sf.json.JSONObject;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -32,6 +33,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import bu.edu.upark.services.LoginServiceImpl;
+import bu.edu.upark.utils.GoogleMapUtils;
+import bu.edu.upark.utils.SearchUtils;
 
 
 
@@ -49,6 +52,27 @@ public class PostController {
 		
 		printInfo(parkInfo);
 		
+		String searchAddr = parkInfo.getAddress1() + " " + parkInfo.getAddress2() + " " + parkInfo.getArea();
+		
+		try {
+			JSONObject object = GoogleMapUtils.getInstance().geocodeByAddress(searchAddr);
+			String formatedAddr = SearchUtils.getFormattedAddress(object);
+			
+			parkInfo.setAddress1(formatedAddr);
+			parkInfo.setAddress2(null);
+			
+			double[] location = SearchUtils.getLocation(object);
+			
+			parkInfo.setLattitude(location[0]);
+			parkInfo.setLongitude(location[1]);
+			
+			System.out.println(location[0]);
+			System.out.println(location[1]);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		
