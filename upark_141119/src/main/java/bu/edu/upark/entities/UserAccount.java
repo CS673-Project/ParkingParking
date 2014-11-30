@@ -11,11 +11,6 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 
-
-
-
-
-
 @Entity(name="UserAccount")
 @Table(name="UserAccount")
 public class UserAccount {
@@ -27,6 +22,8 @@ public class UserAccount {
 //	private String id;
 	
 	
+	private int customerId;
+	
 	private String username;
 	private String password;
 	private String firstname;
@@ -35,18 +32,8 @@ public class UserAccount {
 	
     
 	
-    
-    
-    
-    
-//	public String getId() {
-//		return id;
-//	}
-//	public void setId(String id) {
-//		this.id = id;
-//	}
 	
-	@Id
+	
 	@Column(name = "username")
 	public String getUsername() {
 		return username;
@@ -76,6 +63,18 @@ public class UserAccount {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	
+	@Id
+	@Column(name="customerId")
+	@GenericGenerator(name = "idGenerator", strategy = "increment")
+	@GeneratedValue(generator = "idGenerator")
+	public int getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
 	}
 	
 	

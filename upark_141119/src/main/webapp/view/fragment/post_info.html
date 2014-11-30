@@ -1,0 +1,36 @@
+<div ng-controller="postInfoCtrl">
+	<div id = "post_info">
+	<form  novalidate>
+  		<fieldset>
+	    	<legend><h2>Post my parking slot</h2></legend>
+			<dl class="dl-horizontal">
+				<dt>Renter Name</dt>
+				<dd>{{username}}</dd>
+				<dt>Email</dt>
+				<dd>{{email}}</dd>
+				<dt>Area</dt>
+				<dd>
+					<select ng-model ="area">
+						<option value ="Boston">Boston</option>
+						<option value ="Cambridge">Cambridge</option>
+						<option value="Brookline">Brookline</option>
+					</select>
+				</dd>
+				<dt>Zipcode</dt>
+				<dd><input ng-model = "zipcode"  type="text" required></dd>
+				<dt>Address Line1</dt>
+				<dd><input type="text" ng-model ="address1"><span>(Street, City, State)</span></dd>
+				<dt>Address Line2</dt>
+				<dd><input type="text" ng-model ="address2"><span>(APT, Number)</span></dd>
+				<dt>Rent Date</dt>
+				<dd><input type="date" ng-model ="date"></dd>
+				<dt>From</dt>
+				<dd><input type="time" ng-model ="startTime">to<input type="time" ng-model="endTime"></dd>
+				<dt>Pirce(per Hour)</dt>
+				<dd><input type="number" ng-model ="unitPrice"><span>$</span></span></dd>
+			</dl>
+			<button ng-click="postInfo()">Submit</button>
+		</fieldset>
+		</form>
+	</div>
+</div>

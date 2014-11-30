@@ -7,7 +7,8 @@ app.controller('topNavCtrl', function($scope,$location,$resource,Greeting){
 
     var user = User.save(function(response){
       if(user.username !=""){
-        $scope.greeting.text = user.username;
+        $scope.greeting.text = user.firstname + " " + user.lastname;
+        $scope.greeting.email = user.username;
         Greeting.greet.isLogIn = true;
       }
     });

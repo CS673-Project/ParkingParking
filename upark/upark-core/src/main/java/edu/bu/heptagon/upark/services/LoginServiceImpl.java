@@ -12,6 +12,7 @@ import edu.bu.heptagon.upark.dao.UserAccountDAO;
 import edu.bu.heptagon.upark.entities.UserAccount;
 
 import org.springframework.web.servlet.ModelAndView;
+
 @Service
 public class LoginServiceImpl implements LoginService{
 	   @Autowired
@@ -30,10 +31,6 @@ public class LoginServiceImpl implements LoginService{
     		   mav.setViewName("/login.html");
     		   return  mav;
     	   }
-    	   
-    	   
-		
-    	    
     	   
        }
 }

@@ -1,9 +1,14 @@
-function accountDetailCtrl($scope, $resource,$location, $routeParams) {
+function accountDetailCtrl($scope, $resource,$location, $routeParams, Greeting) {
+	
+	if(Greeting.greet.isLogIn == false){
+		$location.path("/");
+	}
+	
 	$scope.user = {username: ''};
     
 
     var User = $resource(
-                    'php/test4.php'  
+                    '/upark/checkSession'  
                 );
 
     var user = User.save(
@@ -24,5 +29,8 @@ function accountDetailCtrl($scope, $resource,$location, $routeParams) {
                     }
 				}
 			);
+    $scope.postInfo = function(){
+    	$location.path("/postInfo");
+    }
 
 }

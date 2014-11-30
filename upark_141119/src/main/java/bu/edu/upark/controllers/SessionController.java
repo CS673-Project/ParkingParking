@@ -22,14 +22,13 @@ public class SessionController {
 		HttpSession session = req.getSession();
 		
 		uc.setUsername((String)session.getAttribute("username"));
+		uc.setFirstname((String) session.getAttribute("firstname")); 
+		uc.setLastname((String) session.getAttribute("lastname")); 
 		
 		if (uc.getUsername() == null)
 		{
 			uc.setUsername("");
 		}
-
-
-		System.out.println(uc.getUsername());
 
 	    return uc;
 	}
