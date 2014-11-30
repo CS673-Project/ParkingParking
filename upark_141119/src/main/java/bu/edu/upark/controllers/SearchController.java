@@ -55,10 +55,13 @@ public class SearchController {
 	ParkingInfoDAO pid;
 
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
-	public @ResponseBody JSONObject saveUserRestful(
+
+	public @ResponseBody ParkingInfoList saveUserRestful(
+
 			HttpServletRequest req, @RequestBody UserInput userInput) {
 		System.out.println(userInput.getAddress());
-		List<ParkingInfo> al = new ArrayList<ParkingInfo>();
+		
+		ParkingInfoList al = new ParkingInfoList();
 
 		List<ParkingInfo> results = pid.findAll();
 
@@ -87,7 +90,7 @@ public class SearchController {
 						&& result.getLattitude() >= lat1
 						&& result.getLongitude() <= lng1
 						&& result.getLongitude() >= lng2) {
-					al.add(result);
+					al.getList().add(result);
 				}
 
 			}
