@@ -50,13 +50,24 @@ public class PostController {
 		HttpSession session = req.getSession();
 		parkInfo.setUsername((String)session.getAttribute("username"));
 		
+		String searchAddr = "";
 		printInfo(parkInfo);
+		if(parkInfo.getAddress2() == null)
+		{
+			searchAddr = parkInfo.getAddress1() +  " " + parkInfo.getArea();
+		}
+		else
+		{
+			searchAddr = parkInfo.getAddress1() + " " + parkInfo.getAddress2() + " " + parkInfo.getArea();		
+		}
 		
-		String searchAddr = parkInfo.getAddress1() + " " + parkInfo.getAddress2() + " " + parkInfo.getArea();
 		
+		System.out.println(searchAddr);
 		try {
 			JSONObject object = GoogleMapUtils.getInstance().geocodeByAddress(searchAddr);
 			String formatedAddr = SearchUtils.getFormattedAddress(object);
+	
+			System.out.println(formatedAddr);
 			
 			parkInfo.setAddress1(formatedAddr);
 			parkInfo.setAddress2(null);
