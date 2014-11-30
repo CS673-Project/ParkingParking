@@ -1,7 +1,5 @@
 app.controller('modalRegisterCtrl',function($scope,$resource,$location,Greeting){
-	var User = $resource(
-                    '/upark/reg'
-                );
+	var User = $resource( '/upark/reg');
     $scope.registerConfirm = function(){
         var user = User.save(
                         {

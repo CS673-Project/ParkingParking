@@ -19,12 +19,11 @@ body {
 #header #logo{
 	height: 230px;
 	text-align: center;
-	vertical-align: middle;
 }
 #header #logo img{
-	margin-top: 40px;
+	width:100%;
+	margin-top: 100px;
 	
-	width: 80%;
 }
 #header #search{
 	height: 60px;
@@ -95,8 +94,8 @@ body {
 	width: 400px;
 }
 #modal-sign-in .modal-content{
-	background-color:  #abfcfc;
-	opacity: 0.8;
+	background-color: rgb(210,250,255);
+	opacity: 0.85;
 	font-size: 16px;
 }
 #modal-sign-in .modal-header{
@@ -130,7 +129,7 @@ body {
 	width: 500px;
 }
 #modal-register .modal-content{
-	background-color: #abfcfc;
+	background-color: rgb(210,250,255);;
 	opacity: 0.8;
 	font-size: 16px;
 }

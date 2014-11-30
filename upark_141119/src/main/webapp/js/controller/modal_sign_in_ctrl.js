@@ -1,6 +1,9 @@
 app.controller('modalSignInCtrl',function($scope,$resource,$location,Greeting){
 
     $scope.invalid_account = '';
+    $scope.input_username = '';
+    $scope.input_password = '';
+    
     var User = $resource(
                     '/upark/login'
                 );
@@ -31,4 +34,12 @@ app.controller('modalSignInCtrl',function($scope,$resource,$location,Greeting){
         $("#modal-sign-in").modal('hide');
         $("#modal-register").modal().css({'margin-top': function(){return ($(this).height()/2-120);}});
     }
+    
+    $scope.$watch('input_password',function(){
+    	$scope.invalid_account = "";
+    });
+    
+    $scope.$watch('input_username',function(){
+    	$scope.invalid_account = "";
+    });
 });
