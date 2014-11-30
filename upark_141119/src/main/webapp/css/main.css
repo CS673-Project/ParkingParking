@@ -1,5 +1,5 @@
 body {
-	font-family:Arial, Helvetica, sans-serif;
+	font-family:Georgia;
 }
 .navbar{
 	font-size: 20px;
@@ -13,13 +13,11 @@ body {
 }
 #header{
 	height: 230px;
-	background-color: #3498db;
-	/*background-image: url('stars.gif');*/
+	background-color: rgb(210,250,255);
  	background-repeat: repeat-y;
 }
 #header #logo{
 	height: 230px;
-	background-color: #f1c40f;
 	text-align: center;
 	vertical-align: middle;
 }
@@ -58,10 +56,10 @@ body {
 	display: none;
 }
 #sidebar{
-	width: 20%;
+	width: 17%;
 	float: left;
 	height: 700px;
-	background-color: #9b59b6;
+	background-color: #f4ffff;
 }
 #sidebar .nav-tabs{
 	border: none;
@@ -73,10 +71,14 @@ body {
 }
 #sidebar li{
 	margin-top: 15px;
+	margin-left:20%;
 	width: 100%;
 }
 #sidebar li a{
 	color: #000;
+}
+.link-sidebar {
+	
 }
 #content{
 	float: left;
@@ -93,8 +95,8 @@ body {
 	width: 400px;
 }
 #modal-sign-in .modal-content{
-	background-color:  #3498db;
-	opacity: 0.9;
+	background-color:  #abfcfc;
+	opacity: 0.8;
 	font-size: 16px;
 }
 #modal-sign-in .modal-header{
@@ -128,8 +130,8 @@ body {
 	width: 500px;
 }
 #modal-register .modal-content{
-	background-color:  #3498db;
-	opacity: 0.9;
+	background-color: #abfcfc;
+	opacity: 0.8;
 	font-size: 16px;
 }
 #modal-register .modal-header{
@@ -191,8 +193,10 @@ input.ng-valid {
 }
 
 #map {
-    height:630px;
-    width:900px;
+    height:680px;
+    width:100%;
+    margin-top:10px;
+    margin-left:1%;
 }
 .infoWindowContent {
     font-size:  14px !important;
@@ -222,7 +226,7 @@ input.ng-valid {
 /*footer style*/
 #footer{
 	height: 150px;
-	background-color: rgb(234,250,255);
+	background-color: rgb(210,250,255);
 }
 #footerSec1{
 	margin-top: 50px;

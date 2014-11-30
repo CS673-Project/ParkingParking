@@ -78,6 +78,19 @@ app.controller('MapCtrl', function ($scope) {
     $scope.$on("mapSearch",function(event,addr) {
         var geocoder = new google.maps.Geocoder();
         var address = addr;
+        alert(address);
+        var Search = $resouce("/upark/search");
+        var markers = Search.save(
+        		{
+    				address:addr
+    			},
+    			function(){
+    				
+				}
+        );
+        
+        
+        
                 //var address = document.getElementById('address').value;
         geocoder.geocode( { 'address': address}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
