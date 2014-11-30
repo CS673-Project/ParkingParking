@@ -73,9 +73,7 @@ app.controller('MapCtrl', function ($scope,$resource) {
         alert(2);
     }
     
-    for (i = 0; i < cities.length; i++){
-        createMarker(cities[i]);
-    }
+   
 
     $scope.$on("mapSearch",function(event,addr) {
         var geocoder = new google.maps.Geocoder();
@@ -85,26 +83,38 @@ app.controller('MapCtrl', function ($scope,$resource) {
         		{
     				address:addr
     			},
-    			function(){
-    				alert(markers);
+    			function(){		
+    				alert(markers.list.length);
+    				 
+    					 geocoder.geocode( { 'address': address}, function(results, status) {
+    						 for (i = 0; i < markers.list.length; i++){
+    	    					 alert(markers.list[i].address1);
+    	    					 var lattitude = markers.list[i].lattitude;
+    				             var longitude = markers.list[i].longitude;
+		     			            if (status == google.maps.GeocoderStatus.OK) {
+		     			            	alert(lattitude +" "+longitude);
+		     			                $scope.map.setCenter(results[0].geometry.location);
+		     			                var marker1 = new google.maps.Marker({
+		     			                    map: $scope.map,     			               
+		     			                    position:new google.maps.LatLng(lattitude, longitude)
+				     			      });        
+				     			      
+				     			    } else {
+				     			      alert('Geocode was not successful for the following reason: ' + status);
+				     			    }
+    						 }
+		     			  });
+    					 
+    				        
+    				   
+    				
 				}
         );
         
         
         
                 //var address = document.getElementById('address').value;
-        geocoder.geocode( { 'address': address}, function(results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                $scope.map.setCenter(results[0].geometry.location);
-                var marker1 = new google.maps.Marker({
-                    map: $scope.map,
-                    position: results[0].geometry.location
-      });  
-       $scope.markers.push(marker1);
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
+       
         
 });
 
