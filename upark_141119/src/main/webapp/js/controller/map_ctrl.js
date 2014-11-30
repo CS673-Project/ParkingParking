@@ -34,7 +34,7 @@ var cities = [
 
 //Angular App Module and Controller
 
-app.controller('MapCtrl', function ($scope) {
+app.controller('MapCtrl', function ($scope,$resource) {
 
     var mapOptions = {
         zoom: 4,
@@ -78,13 +78,13 @@ app.controller('MapCtrl', function ($scope) {
     $scope.$on("mapSearch",function(event,addr) {
         var geocoder = new google.maps.Geocoder();
         var address = addr;
-        var Search = $resouce("/upark/search");
+        var Search = $resource("/upark/search");
         var markers = Search.save(
         		{
     				address:addr
     			},
     			function(){
-    				
+    				alert(markers);
 				}
         );
         

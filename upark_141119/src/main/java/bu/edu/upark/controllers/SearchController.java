@@ -10,7 +10,6 @@ import java.util.Map;
 import bu.edu.upark.entities.*;
 
 import javax.servlet.http.HttpServletRequest;
-
 import javax.servlet.http.HttpSession;
 
 import bu.edu.upark.repositories.ParkingInfoDAO;
@@ -21,6 +20,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
+import org.json.simple.JSONValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -55,7 +55,7 @@ public class SearchController {
 	ParkingInfoDAO pid;
 
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
-	public @ResponseBody List<ParkingInfo> saveUserRestful(
+	public @ResponseBody JSONObject saveUserRestful(
 			HttpServletRequest req, @RequestBody UserInput userInput) {
 		System.out.println(userInput.getAddress());
 		List<ParkingInfo> al = new ArrayList<ParkingInfo>();
@@ -95,7 +95,10 @@ public class SearchController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return al;
+		String jsString = JSONValue.toJSONString(al);
+		System.out.println("^^^^"+jsString);
+		JSONObject markers = JSONObject.fromObject(jsString);
+		return markers;
 
 	}
 
