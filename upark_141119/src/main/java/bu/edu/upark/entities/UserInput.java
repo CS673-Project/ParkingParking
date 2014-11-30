@@ -1,10 +1,10 @@
 package bu.edu.upark.entities;
 
 public class UserInput {
-	private String userinput;
+	private String address;
 	
-	public String getUserInput() {
-		return userinput;
+	public String getAddress() {
+		return address;
 	}
 
 

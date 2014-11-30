@@ -51,7 +51,7 @@ public class SearchUtils {
  	*/
 	
 	static final double parameterForLatitude = 0.0144985946;
-	static final double parameterForLongtitue = 0.01256690466;
+	static final double parameterForLongtitue = 0.01256690466 * 1.3 ;
 	
 	public static String getZipcode(JSONObject data) {
 		try {

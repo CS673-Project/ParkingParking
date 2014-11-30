@@ -1,4 +1,5 @@
 package bu.edu.upark.controllers;
+
 import java.awt.PageAttributes.MediaType;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,11 +11,9 @@ import bu.edu.upark.entities.*;
 
 import javax.servlet.http.HttpServletRequest;
 
-
-
-
 import javax.servlet.http.HttpSession;
 
+import bu.edu.upark.repositories.ParkingInfoDAO;
 import bu.edu.upark.services.*;
 import net.sf.json.JSONObject;
 
@@ -38,53 +37,65 @@ import bu.edu.upark.services.LoginServiceImpl;
 import bu.edu.upark.utils.*;
 
 @Controller
-@ComponentScan("bu.edu.upark.services")
+@ComponentScan("bu.edu.upark.repositories")
 public class SearchController {
 	SearchService searchService;
 	String userinput;
 	double lat1;
 	double lat2;
-	
+
 	double lng1;
 	double lng2;
 	double[] NorthEast = new double[2];
-    double[] SouthWest = new double[2];
+	double[] SouthWest = new double[2];
+	double[] NewNorthEast = new double[2];
+	double[] NewSouthWest = new double[2];
+
+	@Autowired
+	ParkingInfoDAO pid;
+
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
-	public @ResponseBody List<ParkingInfo> saveUserRestful( HttpServletRequest req , @RequestBody UserInput userInput)    
-	{		
-		ParkingInfo pi = new ParkingInfo();
+	public @ResponseBody List<ParkingInfo> saveUserRestful(
+			HttpServletRequest req, @RequestBody UserInput userInput) {
+		System.out.println(userInput.getAddress());
 		List<ParkingInfo> al = new ArrayList<ParkingInfo>();
-		if(searchService.doSearch(req, userInput))
-		{
-			List<ParkingInfo> results = new ArrayList<ParkingInfo>();
-			userinput = userInput.getUserInput();
-			JSONObject bean;
-			try {
-				bean = GoogleMapUtils.getInstance().geocodeByAddress(userinput);
-	            NorthEast = SearchUtils.getNorthEast(bean);
-	            SouthWest = SearchUtils.getSouthWest(bean);
-	            lat1 = SouthWest[0];
-	            lat2 = NorthEast[0];	            
-	            lng1 = NorthEast[1];
-	            lng2 = SouthWest[1];
-	            for(ParkingInfo result:results) {
-	            	if(result.getLattitude() <= lat2 && result.getLattitude() >= lat1 && 
-	            			result.getLongitude() <= lng2 && result.getLongitude() >= lat1) {
-	            		al.add(result);
-	            	}
-	            	
-	            }
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} 	
-			pi.setUsername(pi.getUsername());
-			return al;
+
+		List<ParkingInfo> results = pid.findAll();
+
+		userinput = userInput.getAddress();
+		JSONObject bean;
+		try {
+			bean = GoogleMapUtils.getInstance().geocodeByAddress(userinput);
+			NorthEast = SearchUtils.getNorthEast(bean);
+			SouthWest = SearchUtils.getSouthWest(bean);
+			NewNorthEast = SearchUtils.getNewNorthEest(NorthEast);
+			NewSouthWest = SearchUtils.getNewSouthWest(SouthWest);
+			
+			lat1 = NewSouthWest[0];
+			lat2 = NewNorthEast[0];
+			lng1 = NewNorthEast[1];
+			lng2 = NewSouthWest[1];
+			
+			System.out.println(lat1);
+			System.out.println(lat2);
+			System.out.println(lng1);
+			System.out.println(lng2);
+			
+			
+			for (ParkingInfo result : results) {
+				if (result.getLattitude() <= lat2
+						&& result.getLattitude() >= lat1
+						&& result.getLongitude() <= lng1
+						&& result.getLongitude() >= lng2) {
+					al.add(result);
+				}
+
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		else
-		{
-			return null;
-		}
+		return al;
 
 	}
 
