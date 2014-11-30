@@ -157,6 +157,43 @@ public class SearchUtils {
 	}
 	
 	/**
+	 * Private method helps to generate the location of the given JSONObject
+	 * @param data the JSONObject
+	 * @return the viewport for parsing the bound, null if the parsing fails.
+	 */
+	private static JSONObject getLocationObj(JSONObject data) {
+		try {
+			JSONArray results = data.getJSONArray("results");
+			JSONObject address = results.getJSONObject(0);
+			JSONObject geometry = (JSONObject) address.get("geometry");
+			JSONObject location = (JSONObject) geometry.get("location");
+			return location;	
+		}catch(NullPointerException npe) {
+			npe.printStackTrace();
+		}
+		return null;
+	}
+	
+	public static double[] getLocation(JSONObject data) {
+		try {
+			double[] result = new double[2];
+			JSONObject location = getLocationObj(data);
+//			JSONObject northeast = (JSONObject) location.get("northeast");
+			Double lat = (double) location.get("lat");
+			Double lng = (double) location.get("lng");
+			result[0] = lat;
+			result[1] = lng;
+			return result;	
+		}catch(NullPointerException npe) {
+			npe.printStackTrace();
+		}
+		return null;		
+	}
+	
+	
+	
+	
+	/**
 	 * Get the new southwest bound of the location.
 	 * @param bound bound google map API returns.
 	 * @return the Double array of new southwest bound.

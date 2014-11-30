@@ -107,11 +107,14 @@ public final class GoogleMapUtils {
     public static void main(String[] args) throws Exception {  
         try {  
             getInstance().setType(1);  
-            JSONObject bean = getInstance().geocodeByAddress("boston"); 
+            JSONObject bean = getInstance().geocodeByAddress("54 Qunit Ave Apt1,Allston"); 
             double[] NorthEast = new double[2];
             double[] SouthWest = new double[2];
+            double[] location = new double[2];
             NorthEast = SearchUtils.getNorthEast(bean);
             SouthWest = SearchUtils.getSouthWest(bean);
+            location = SearchUtils.getLocation(bean);
+            log.info("location: " + location[0] + location[1]);
             
             
             log.info("address: " + SearchUtils.getFormattedAddress(bean));
