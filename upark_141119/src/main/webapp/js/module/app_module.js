@@ -1,5 +1,5 @@
 // the angularJS module intetface for all controllers
-var app = angular.module('UPark', ['ngRoute','ngResource']);
+var app = angular.module('UPark', ['ngRoute','ngResource','ui.bootstrap']);
 // routing manage
 app.config(['$routeProvider', function($routeProvider) {
 $routeProvider.
@@ -19,5 +19,4 @@ app.factory("Greeting", function() {
   			}
   		};
 });
-
 
