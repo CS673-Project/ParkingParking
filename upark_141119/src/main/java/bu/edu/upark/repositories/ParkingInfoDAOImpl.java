@@ -10,8 +10,8 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Repository;
 
 import bu.edu.upark.entities.ParkingInfo;
-import bu.edu.upark.entities.UserAccount;
 
+@SuppressWarnings("deprecation")
 @Repository
 public class ParkingInfoDAOImpl  implements ParkingInfoDAO{
 	
@@ -38,6 +38,7 @@ public class ParkingInfoDAOImpl  implements ParkingInfoDAO{
     	Session s = getCurrentSession();
 		s.beginTransaction();
 		Query query = s.createQuery(findAllHQL);
+		@SuppressWarnings("unchecked")
 		List<ParkingInfo> list= query.list();
 		s.getTransaction().commit();
 		
@@ -49,6 +50,7 @@ public class ParkingInfoDAOImpl  implements ParkingInfoDAO{
     	Session s = getCurrentSession();
 		s.beginTransaction();
 		Query query = s.createQuery(queryHQL).setString("inputUsername",username);
+		@SuppressWarnings("unchecked")
 		List<ParkingInfo> list= query.list();
 		s.getTransaction().commit();
 		if(list.isEmpty()) return null;

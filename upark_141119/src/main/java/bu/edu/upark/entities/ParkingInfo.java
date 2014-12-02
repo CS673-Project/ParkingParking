@@ -11,31 +11,18 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name="ParkInfo")
 public class ParkingInfo {
 	
-	private int infoId;
-	
-	
-	private String username;// email
-	
-
-	
-	private String zipcode;
-	
-	private String area;
-	
+	private int infoId;		
+	private String username;// email	
+	private String zipcode;	
+	private String area;	
 	private String address1;
-
 	private String address2;
-	
 	private String date;
 	private String startTime;
-	private String endTime;
-	
-	private float unitPrice;
-	
+	private String endTime;	
+	private float unitPrice;	
 	private double lattitude;
-	private double longitude;
-	
-	
+	private double longitude;		
 	
 	@Id
 	@GenericGenerator(name = "idGenerator", strategy = "increment")
@@ -45,8 +32,7 @@ public class ParkingInfo {
 	}
 	public void setInfoId(int infoId) {
 		this.infoId = infoId;
-	}
-	
+	}	
 	
 	public String getUsername() {
 		return username;
@@ -61,10 +47,7 @@ public class ParkingInfo {
 	public void setArea(String area) {
 		this.area = area;
 	}
-	
-	
-	
-	
+		
 	public String getZipcode() {
 		return zipcode;
 	}
@@ -113,7 +96,6 @@ public class ParkingInfo {
 	public void setUnitPrice(float unitPrice) {
 		this.unitPrice = unitPrice;
 	}
-
 	
 	public double getLattitude() {
 		return lattitude;

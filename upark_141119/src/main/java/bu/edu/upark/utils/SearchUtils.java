@@ -178,7 +178,6 @@ public class SearchUtils {
 		try {
 			double[] result = new double[2];
 			JSONObject location = getLocationObj(data);
-//			JSONObject northeast = (JSONObject) location.get("northeast");
 			Double lat = (double) location.get("lat");
 			Double lng = (double) location.get("lng");
 			result[0] = lat;
@@ -189,9 +188,6 @@ public class SearchUtils {
 		}
 		return null;		
 	}
-	
-	
-	
 	
 	/**
 	 * Get the new southwest bound of the location.
@@ -217,8 +213,6 @@ public class SearchUtils {
 		return newNorthEest;
 	}
 	
-	
-
 	public static String ReadFile(String path) {
         BufferedReader reader = null;
         String laststr = "";
@@ -244,20 +238,6 @@ public class SearchUtils {
         }
         return laststr;
     }
-
-	public static void main(String[] args) {
-		String path = "./src/test.json";
-		new SearchUtils();
-		String str = SearchUtils.ReadFile(path);
-		JSONObject data = JSONObject.fromObject(str);
-		System.out.println(getZipcode(data));
-		System.out.println(getFormattedAddress(data));
-		double[] southwest = getSouthWest(data);
-		double[] northeest = getNorthEast(data);
-		System.out.println(southwest[0] +"."+ southwest[1]);
-		System.out.println(northeest[0] +"." + northeest[1]);
-	}
-
 }
 
 

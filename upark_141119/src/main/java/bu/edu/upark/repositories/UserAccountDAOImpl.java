@@ -1,18 +1,17 @@
 package bu.edu.upark.repositories;
 
 import java.util.List;
-import java.util.UUID;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import bu.edu.upark.entities.UserAccount;
 
+@SuppressWarnings("deprecation")
 @Repository
 public class UserAccountDAOImpl implements UserAccountDAO{
 
@@ -45,7 +44,8 @@ public class UserAccountDAOImpl implements UserAccountDAO{
     	Session s =getCurrentSession();
     	s.beginTransaction();
     	Query query = s.createQuery(queryHQL).setString("inputUsername",username);
-    	List<UserAccount> list= query.list();
+    	@SuppressWarnings("unchecked")
+		List<UserAccount> list= query.list();
     	s.getTransaction().commit();
     	if(list.isEmpty()) return null;
     	return list.get(0);

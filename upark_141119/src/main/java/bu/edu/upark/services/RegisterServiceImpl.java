@@ -25,10 +25,8 @@ public class RegisterServiceImpl implements RegisterService {
 			req.getSession().setAttribute("lastname", useraccount.getLastname());
 			req.getSession().setAttribute("firstname", useraccount.getFirstname());
 			req.getSession().setAttribute("password", useraccount.getPassword());
-			System.out.println("Register Success");
 			return true;
 		}
-		System.out.println("Register fails");
 		return false;
 	}
 

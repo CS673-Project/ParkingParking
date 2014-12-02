@@ -6,6 +6,4 @@ public class UserInput {
 	public String getAddress() {
 		return address;
 	}
-
-
 }

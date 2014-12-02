@@ -1,7 +1,5 @@
 package bu.edu.upark.services;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +19,7 @@ public class PostServiceImpl implements PostService{
 	 	
 		@Override
 		public boolean doPost(HttpServletRequest req, ParkingInfo parkInfo) {
-			
-			pid.addParkInfo(parkInfo);
-			System.out.println("Post Success");
-			
-			
+			pid.addParkInfo(parkInfo);	
 			return true;
 		}
 
