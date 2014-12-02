@@ -1,36 +1,144 @@
 <div ng-controller="postInfoCtrl">
 	<div id = "post_info">
-	<form  novalidate>
-  		<fieldset>
-	    	<legend><h2>Post my parking slot</h2></legend>
-			<dl class="dl-horizontal">
-				<dt>Renter Name</dt>
-				<dd>{{username}}</dd>
-				<dt>Email</dt>
-				<dd>{{email}}</dd>
-				<dt>Area</dt>
-				<dd>
-					<select ng-model ="area">
-						<option value ="Boston">Boston</option>
-						<option value ="Cambridge">Cambridge</option>
-						<option value="Brookline">Brookline</option>
-					</select>
-				</dd>
-				<dt>Zipcode</dt>
-				<dd><input ng-model = "zipcode"  type="text" required></dd>
-				<dt>Address Line1</dt>
-				<dd><input type="text" ng-model ="address1"><span>(Street, City, State)</span></dd>
-				<dt>Address Line2</dt>
-				<dd><input type="text" ng-model ="address2"><span>(APT, Number)</span></dd>
-				<dt>Rent Date</dt>
-				<dd><input type="date" ng-model ="date"></dd>
-				<dt>From</dt>
-				<dd><input type="time" ng-model ="startTime">to<input type="time" ng-model="endTime"></dd>
-				<dt>Pirce(per Hour)</dt>
-				<dd><input type="number" ng-model ="unitPrice"><span>$</span></span></dd>
-			</dl>
-			<button ng-click="postInfo()">Submit</button>
-		</fieldset>
+		<h1>Post my parking slot</h1>
+		<form class="form-horizontal"  role="form"  novalidate>
+			<table class="table table-striped table-hover">
+				<tr>
+					<td>
+					<div class="form-group">
+					    <label class="col-md-3 control-label">Name</label>
+					    <div class="col-md-8">
+					    	<p class="form-control-static">{{username}}</p>
+					    </div>
+			  		</div>
+			  		</td>
+		  		</tr>
+		  		<tr>
+		  			<td>
+					<div class="form-group">
+					    <label class="col-md-3 control-label">Email</label>
+					    <div class="col-md-8">
+					    	<p class="form-control-static">{{email}}</p>
+					    </div>
+			  		</div>
+			  		</td>
+	  			</tr>
+	  			<tr>
+		  			<td>
+			  		<div class="form-group">
+					  	<label class="col-md-3 control-label">Area</label>
+					  	<div class="col-md-3">
+						 	 <select class="form-control " ng-model ="area" required>
+							    <option value ="Boston">Boston</option>
+								<option value ="Cambridge">Cambridge</option>
+								<option value="Brookline">Brookline</option>
+							 </select>
+						 </div>
+					</div>
+					</td>
+	  			</tr>
+	  			<tr>
+		  			<td>
+					<div class="form-group">
+					    <label class="col-md-3 control-label">Zipcode</label>
+					    <div class="col-md-2">
+					    	<input type="text" ng-model = "zipcode" class="form-control" required>
+					    </div>
+					</div>
+					</td>
+	  			</tr>
+	  			<tr>
+		  			<td>
+					<div class="form-group">
+					    <label class="col-md-3 control-label">Address 1</label>
+					    <div class="row">
+						    <div class="col-md-4">
+						    	<input type="text" ng-model ="address1" class="form-control col-md-4"  required>
+						    </div>
+						    <div class="col-md-4">
+						    	<span >(Street, City, State)</span>
+						    </div>
+						</div>
+					</div>
+					</td>
+	  			</tr>
+	  			<tr>
+		  			<td>
+					<div class="form-group">
+					    <label class="col-md-3 control-label">Address 2</label>
+					    <div class="row">
+						    <div class="col-md-2">
+						    	<input type="text" ng-model ="address2" class="form-control col-md-2"  required>
+						    </div>
+						    <div class="col-md-4">
+						    	<span >(apt#)</span>
+						    </div>
+						</div>
+					</div>
+					</td>
+	  			</tr>
+	  			<tr>
+		  			<td>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Date</label>
+		                <div class="row">
+					        <div class="col-md-4">
+					            <p class="input-group">
+					              <input type="text" ng-model ="date" class="form-control" datepicker-popup="{{format}}" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+					              <span class="input-group-btn">
+					                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+					              </span>
+					            </p>
+					        </div>
+					    </div>            
+		            </div>
+           			</td>
+	  			</tr>
+	  			<tr>
+		  			<td>
+		            <div class="form-group">
+					    <label class="col-md-3 control-label">Time</label>
+					    <div class="row">
+						    <div class="col-md-2">
+						    	<input type="time" ng-model ="startTime" class="form-control col-md-2"  required>
+						    </div>
+						    <div class="col-xs-1">
+						    	<span class="add-on">to</span>
+						    </div>
+						    <div class="col-md-2">
+						    	<input type="time" ng-model ="endTime" class="form-control col-md-2"  required>
+						    </div>
+						</div>
+					</div>
+					</td>
+	  			</tr>
+	  			<tr>
+		  			<td>
+					<div class="form-group">
+					    <label class="col-md-3 control-label">Price</label>
+					    <div class="row">
+						    <div class="col-md-2">
+						    	<input type="number" ng-model ="unitPrice" class="form-control col-md-2"  required>
+						    </div>
+						    <div class="col-md-4">
+						    	<span >(per hour, $)</span>
+						    </div>
+						</div>
+					</div>
+					</td>
+	  			</tr>
+	  			<tr>
+		  			<td>
+					<div class="form-group">
+					    <label class="col-md-3 control-label"></label>
+					    <div class="col-md-3">
+						    <button ng-click="postInfo()" class="btn btn-warning btn-lg">Submit</button>
+						</div>
+					</div>
+					</td>
+	  			</tr>
+			</table>
 		</form>
 	</div>
 </div>
+

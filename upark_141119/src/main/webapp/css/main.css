@@ -43,17 +43,36 @@ body {
 	float: left;
 }
 /*sliding page*/
-#extended-page{
+.extended-page{
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	border: 1px solid;
 	height: 700px;
-	background-color: #34495e;
-	color: #FFF;
-	opacity: 0.6;
+	background: rgba(180,180,180,0.7);
 	display: none;
 }
+/* news sliding page style */
+.news-section{
+	width: 100%;
+	height:200px;
+	margin-top:30px;
+}
+.news-section h3{
+	width:100%;
+	padding-left:5%;
+}
+.img-news{
+	display: inline-block;
+	opacity: 0.8;
+	padding-left:5%;
+}
+.p-news{
+	height:120px;
+	display: inline-block;
+	font-size:18px;
+	padding-left:8%;
+}
+
 #sidebar{
 	width: 17%;
 	float: left;
@@ -183,8 +202,14 @@ input.ng-valid {
 	text-align: left;
 }
 #account_detail #account_info{
-	margin-left: 20%;
-	margin-right: 20%;
+	margin-left: 15%;
+}
+#account_info table{
+	margin-top: 30px;
+}
+#account_info button{
+	margin-top:30px;
+	width: 150px;
 }
 #map_canvas{
 	text-align: center;
@@ -210,11 +235,22 @@ input.ng-valid {
 }
 /* post info page style */
 #post_info{
+	margin-left: 25%;
+	width:70%;
 	font-size:22px;
 }
-#post_info input{
-	height: 50px;
-	width: 200px;
+#post_info form{
+	margin-top:30px;
+}
+#post_info label{
+	font-weight:bold;
+	text-align: left;
+}
+#post_info select{
+	font-size:18px;
+}
+#post_info span{
+	display:float;
 }
 #post_info dt{
 	text-align: left;
@@ -256,4 +292,3 @@ input.ng-valid {
 	padding-left: 10px;
 	width: 40px;
 	height: 30px;
-}
