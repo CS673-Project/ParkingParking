@@ -13,26 +13,17 @@ import bu.edu.upark.entities.UserAccount;
 @Controller
 public class SessionController {
 	@RequestMapping(value = "/checkSession" , method = RequestMethod.POST)
-	public @ResponseBody UserAccount checkSession(HttpServletRequest req) {
-		
-		System.out.println("test session");
-		
-		UserAccount uc = new UserAccount();
-		
-		HttpSession session = req.getSession();
-		
+	public @ResponseBody UserAccount checkSession(HttpServletRequest req) {		
+		UserAccount uc = new UserAccount();		
+		HttpSession session = req.getSession();		
 		uc.setUsername((String)session.getAttribute("username"));
 		uc.setFirstname((String) session.getAttribute("firstname")); 
-		uc.setLastname((String) session.getAttribute("lastname")); 
-		
+		uc.setLastname((String) session.getAttribute("lastname")); 		
 		if (uc.getUsername() == null)
 		{
 			uc.setUsername("");
 		}
 
 	    return uc;
-	}
-	
-
-	
+	}		
 }
