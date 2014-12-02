@@ -17,12 +17,7 @@ public class LoginServiceImpl implements LoginService{
        public boolean doLogin(HttpServletRequest req,UserAccount userAccount){
     	   
     	   UserAccount ua = uad.findUserbyName(userAccount.getUsername());
-    	   
-//    	   System.out.println(ua.getPassword());
-//    	   System.out.println(ua.getLastname());
-//    	   System.out.println(ua.getFirstname());
-    	   
-    	   
+ 	   
     	   if(ua!=null&&ua.getPassword().equals(userAccount.getPassword())){
     		  System.out.println("OK");
     		  req.getSession().setMaxInactiveInterval(60*30);
@@ -38,8 +33,7 @@ public class LoginServiceImpl implements LoginService{
     	   }
     	   
        }
-       
-       
+        
        public void printSession(HttpServletRequest req)
        {
     	   HttpSession session = req.getSession();

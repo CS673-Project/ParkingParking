@@ -1,8 +1,6 @@
 package bu.edu.upark.services;
 
 import javax.servlet.http.HttpServletRequest;
-
-import bu.edu.upark.entities.ParkingInfo;
 import bu.edu.upark.entities.UserInput;
 
 public interface SearchService {

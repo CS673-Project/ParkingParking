@@ -13,12 +13,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;  
 import java.net.URL;  
 import java.net.URLEncoder;  
-
 import net.sf.json.JSONObject;   
-
 import org.apache.log4j.Logger;  
-
-import bu.edu.upark.utils.SearchUtils;
 
 public final class GoogleMapUtils {
 	public static final int ADDRESS = 1;  
@@ -102,33 +98,5 @@ public final class GoogleMapUtils {
             }  
         }  
     }  
-       
-
-    public static void main(String[] args) throws Exception {  
-        try {  
-            getInstance().setType(1);  
-            JSONObject bean = getInstance().geocodeByAddress("54 Qunit Ave Apt1,Allston"); 
-            double[] NorthEast = new double[2];
-            double[] SouthWest = new double[2];
-            double[] location = new double[2];
-            NorthEast = SearchUtils.getNorthEast(bean);
-            SouthWest = SearchUtils.getSouthWest(bean);
-            location = SearchUtils.getLocation(bean);
-            log.info("location: " + location[0] + location[1]);
-            
-            
-            log.info("address: " + SearchUtils.getFormattedAddress(bean));
-            log.info("zipcode: " + SearchUtils.getZipcode(bean));
-            log.info("NorthEast: " + NorthEast[0] + NorthEast[1]);
-            log.info("SouthWest: " + SouthWest[0] + SouthWest[1]);
-            
-            
-        } catch (IOException e) {  
-            // TODO Auto-generated catch block  
-            e.printStackTrace();  
-        }  
-  
-    }  
-	
 
 }
