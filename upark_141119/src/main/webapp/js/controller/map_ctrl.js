@@ -39,8 +39,8 @@ app.controller('MapCtrl', function ($scope,$resource) {
 
 
     var mapOptions = {
-        zoom: 4,
-        center: new google.maps.LatLng(40.0000, -98.0000),
+        zoom: 13,
+        center: new google.maps.LatLng(42.350925, -71.06544),
         mapTypeId: google.maps.MapTypeId.TERRAIN
     }
 
