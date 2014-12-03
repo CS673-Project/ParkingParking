@@ -16,7 +16,7 @@ import bu.edu.upark.entities.ParkingInfo;
 public class ParkingInfoDAOImpl  implements ParkingInfoDAO{
 	
 	
-	String queryHQL = "from parkinfo where username =:inputUsername";
+	String findByUsername = "from parkinfo where username =:inputUsername";
 	
 	String findAllHQL = "from ParkingInfo";
 	public void addParkInfo(ParkingInfo pi)
@@ -45,16 +45,16 @@ public class ParkingInfoDAOImpl  implements ParkingInfoDAO{
 		return list;   	
     }
     
-    public ParkingInfo findInfobyName(String username)
+    public List<ParkingInfo> findInfobyName(String username)
 	{
     	Session s = getCurrentSession();
 		s.beginTransaction();
-		Query query = s.createQuery(queryHQL).setString("inputUsername",username);
+		Query query = s.createQuery(findByUsername).setString("inputUsername",username);
 		@SuppressWarnings("unchecked")
 		List<ParkingInfo> list= query.list();
 		s.getTransaction().commit();
 		if(list.isEmpty()) return null;
-		return list.get(0);
+		return list;
     }
     
     public ParkingInfo getParkInfo(String id)
@@ -62,9 +62,12 @@ public class ParkingInfoDAOImpl  implements ParkingInfoDAO{
     	return null;
     }
     
-    public void deleteParkInfo(String id)
+    public void deleteParkInfo(ParkingInfo pi)
     {
-    	
+    	Session s =getCurrentSession();
+    	s.beginTransaction();
+        s.save(pi);
+        s.getTransaction().commit();
     }
 
     
