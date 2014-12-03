@@ -14,8 +14,9 @@ import bu.edu.upark.services.LoginServiceImpl;
 
 @Controller
 @ComponentScan("bu.edu.upark.services")
+
 public class LoginController {
-	@Autowired LoginServiceImpl loginService;
+	@Autowired private LoginServiceImpl loginService;
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public @ResponseBody UserAccount saveUserRestful( HttpServletRequest req , @RequestBody UserAccount user )   
 	{		
