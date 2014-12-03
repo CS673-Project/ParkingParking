@@ -17,7 +17,8 @@ app.factory("Greeting", function() {
   			greet: {
   				text:'Sign In',
   				email:"",
-  				isLogIn: false
+  				isLogIn: false,
+  				address:""
   			}
   		};
 });
