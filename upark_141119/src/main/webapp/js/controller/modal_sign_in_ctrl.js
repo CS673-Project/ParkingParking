@@ -32,7 +32,7 @@ app.controller('modalSignInCtrl',function($scope,$resource,$location,Greeting){
 
     $scope.register = function(){   
         $("#modal-sign-in").modal('hide');
-        $("#modal-register").modal().css({'margin-top': function(){return ($(this).height()/2-120);}});
+        $("#modal-register").modal().css({'padding-top': function(){return ($(this).height()/2-120);}});
     }
     
     $scope.$watch('input_password',function(){

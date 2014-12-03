@@ -9,8 +9,6 @@ app.controller( 'postInfoCtrl',function($scope,$resource,$location,Greeting){
 	
 	
 	$scope.postInfo = function(){
-		alert($scope.startTime);
-		alert($scope.date);
 		var postInfo = $resource(
 				'/upark/post' 
 				);
@@ -18,7 +16,6 @@ app.controller( 'postInfoCtrl',function($scope,$resource,$location,Greeting){
 		var info = postInfo.save(
     			{
     				area: $scope.area,
-    				zipcode: $scope.zipcode,
     				address1: $scope.address1,
     				address2: $scope.address2,
     				date: $scope.date,
@@ -28,9 +25,9 @@ app.controller( 'postInfoCtrl',function($scope,$resource,$location,Greeting){
     			},
     			function(){
     				
-    				if(1){
+    				if(info.infoId != "0"){
 
-    					$location.path("/");
+    					$location.path("/postSucceed");
     					
     				}
     				else{
