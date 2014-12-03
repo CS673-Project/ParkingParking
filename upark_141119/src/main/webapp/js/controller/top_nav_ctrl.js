@@ -16,7 +16,7 @@ app.controller('topNavCtrl', function($scope,$location,$resource,Greeting){
     
     $scope.signIn = function(){
     	if($scope.greeting.isLogIn == false)
-        	$("#modal-sign-in").modal().css({'margin-top': function(){return ($(this).height()/2-120);}});
+        	$("#modal-sign-in").modal().css({'padding-top': function(){return ($(this).height()/2-120);}});
       else{
        	  $location.path("/account/"+$scope.greeting.text);     
         }
