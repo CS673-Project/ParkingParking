@@ -33,18 +33,25 @@
 
     <session-factory>
 
-        <!-- Database connection settings -->
+       <!--   Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_1e7966c767a4142?reconnect=true</property>
         <property name="connection.username">b673f77ed6c585</property>
-        <property name="connection.password">6ba7385a</property>
+        <property name="connection.password">6ba7385a</property> 
+        
+        
+        <!-- <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.username">vmiuaakuzoswtw</property>
+        <property name="hibernate.connection.password">SS1JGxegutXWrUmP-791-Ap20L</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://ec2-184-73-229-220.compute-1.amazonaws.com:5432/df1nudq9gljej0</property> -->
 
         <!-- JDBC connection pool (use the built-in) -->
         <!--  
         <property name="connection.pool_size">1</property>
 		-->
 		
-        <!-- SQL dialect -->
+      
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 
         <!-- Disable the second-level cache  -->
