@@ -33,18 +33,25 @@
 
     <session-factory>
 
-        <!-- Database connection settings -->
+       <!--   Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/upark</property>
         <property name="connection.username">root</property>
-        <property name="connection.password">Sx115298</property>
+        <property name="connection.password">Sx115298</property> 
+        
+        
+        <!-- <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.username">vmiuaakuzoswtw</property>
+        <property name="hibernate.connection.password">SS1JGxegutXWrUmP-791-Ap20L</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://ec2-184-73-229-220.compute-1.amazonaws.com:5432/df1nudq9gljej0</property> -->
 
         <!-- JDBC connection pool (use the built-in) -->
         <!--  
         <property name="connection.pool_size">1</property>
 		-->
 		
-        <!-- SQL dialect -->
+      
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 
         <!-- Disable the second-level cache  -->

@@ -32,5 +32,9 @@ function accountDetailCtrl($scope, $resource,$location, $routeParams, Greeting) 
     $scope.postInfo = function(){
     	$location.path("/postInfo");
     }
+    
+    $scope.review = function(){
+    	$location.path("/reviewInfo/"+$scope.user.username);
+    }
 
 }
