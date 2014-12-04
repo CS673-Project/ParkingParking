@@ -1,7 +1,7 @@
 //Angular App Module and Controller
 
 
-app.controller('MapCtrl', function ($scope,$resource,$location,Greeting) {
+app.controller('MapCtrl', function ($scope,$resource,$location,$filter,Greeting) {
 
 
     var mapOptions = {
@@ -62,16 +62,16 @@ app.controller('MapCtrl', function ($scope,$resource,$location,Greeting) {
 
                                    
                                    //info window
-                                   var contentString = '<div id="content">'+
-                                   '<h6 id="firstHeading" class="firstHeading">'+markers.list[i].address1+'</h6>'+
+                                   var contentString = '<div class="map-marker">'+
+                                   '<h4 id="firstHeading" class="firstHeading">'+markers.list[i].address1+'</h4>'+
                                    '<hr />'+
-                                   '<div id="bodyContent">'+
-                                   'Email:&nbsp'+markers.list[i].username+'<br>'+
-                                   'Start Time:&nbsp'+markers.list[i].startTime+'<br>'+
-                                   'End Time:&nbsp'+markers.list[i].endTime+'<br>'+
-                                   'Unit Price:&nbsp$'+markers.list[i].unitPrice+'<br>'+
-                                   
-                                   '</div>'+
+                                   '<div class="bodyContent"><dl class="dl-horizontal">'+
+                                   '<span class="col1">Date:</span><span class="col2">'+$filter('date')(markers.list[i].date,"yyyy-MM-dd")+'</span><br/>'+
+                                   '<span class="col1">Start Time:</span><span class="col2">'+$filter('date')(markers.list[i].startTime,"H:mm")+'</span><br/>'+
+                                   '<span class="col1">End Time:</span><span class="col2">'+$filter('date')(markers.list[i].endTime,"H:mm")+'</span><br/>'+
+                                   '<span class="col1">Unit Price:</span><span class="col2">'+$filter('currency')(markers.list[i].unitPrice,"$")+'</span><br/>'+
+                                   '<span class="col1">Email:</span><span class="col2">'+markers.list[i].username+'</span><br/>'+                              
+                                   '</dl></div>'+
                                    '</div>';
 
                                    var infowindow = new google.maps.InfoWindow({

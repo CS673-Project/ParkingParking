@@ -16,7 +16,7 @@ import bu.edu.upark.entities.ParkingInfo;
 public class ParkingInfoDAOImpl  implements ParkingInfoDAO{
 	
 	
-	String findByUsername = "from parkinfo where username =:inputUsername";
+	String findByUsername = "from ParkingInfo where username =:inputUsername";
 	
 	String findAllHQL = "from ParkingInfo";
 	public void addParkInfo(ParkingInfo pi)
@@ -66,7 +66,7 @@ public class ParkingInfoDAOImpl  implements ParkingInfoDAO{
     {
     	Session s =getCurrentSession();
     	s.beginTransaction();
-        s.save(pi);
+        s.delete(pi);
         s.getTransaction().commit();
     }
 

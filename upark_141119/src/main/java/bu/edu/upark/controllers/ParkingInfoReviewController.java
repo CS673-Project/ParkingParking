@@ -24,6 +24,7 @@ public class ParkingInfoReviewController {
 	public @ResponseBody ParkingInfoList doReview(@RequestBody UserAccount useraccount){
 		ParkingInfoList pil = new ParkingInfoList();
 		List<ParkingInfo> parkingList=pid.findInfobyName(useraccount.getUsername());
+		if(parkingList!=null)
 		pil.getList().addAll(parkingList);
 		return pil;
 	}

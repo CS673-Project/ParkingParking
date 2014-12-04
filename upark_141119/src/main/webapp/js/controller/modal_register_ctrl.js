@@ -9,7 +9,6 @@ app.controller('modalRegisterCtrl',function($scope,$resource,$location,Greeting)
 	                        {
 	                            username:$scope.input_username,
 	                            password:$scope.input_password,
-	                           	repassword:$scope.input_re_password,
 	                            firstname:$scope.input_first_name,
 	                            lastname:$scope.input_last_name
 	                        },
