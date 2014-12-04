@@ -72,6 +72,20 @@ public class UserLogin {
 	  assertTrue(list.size() > 0);
   }
   
+  @Test
+  public void testUserLoginWrongUserNameANDPassword() throws Exception {
+	  driver.get(baseUrl + "/upark/#/");
+	  driver.findElement(By.cssSelector("span.ng-binding")).click();
+	  driver.findElement(By.name("username")).clear();
+	  driver.findElement(By.name("username")).sendKeys("fshi2@bu.edu");
+	  driver.findElement(By.name("password")).clear();
+	  driver.findElement(By.name("password")).sendKeys("adm");
+	  driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+	  List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),'" + "Incorrect username or password" + "')]"));
+	  assertTrue(list.size() > 0);
+  }
+  
   @After
   public void tearDown() throws Exception {
     driver.quit();
