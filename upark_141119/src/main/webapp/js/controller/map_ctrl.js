@@ -107,6 +107,6 @@ app.controller('MapCtrl', function ($scope,$resource,$location,$filter,Greeting)
     });
 
     $scope.listView = function(){
-    	$location.path('/mapListView/'+address)
+    	$location.path('/mapListView/'+Greeting.greet.address)
     }
 });
